@@ -46,4 +46,4 @@ jobs:
       - name: Current date 2
         run: |
           echo 'test'
-          echo '${{ env.DOCKER_REPOSITORY }}/${{ env.DOCKER_TAG }}'
+          echo '${{ env.DOCKER_REPOSITORY }}/${{  env.GITHUB_REPOSITORY }}${{ env.DOCKER_TAG }}'
