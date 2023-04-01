@@ -26,7 +26,7 @@ jobs:
     steps:
       - name: notification
         if: cancelled() == false
-        uses: https://github.com/xinthink/action-telegram@v1.1
+        uses: xinthink/action-telegram@v1.1
         with:
           botToken: ${{ secrets.TELEGRAM_TOKEN }}
           chatId: ${{ secrets.TELEGRAM_TO }}
