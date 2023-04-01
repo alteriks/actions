@@ -24,6 +24,9 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - name: Create annotation for build error
+        run: echo "::error file=app.js,line=1::Missing semicolon"
+
       - name: notification
         if: cancelled() == false
         uses: xinthink/action-telegram@v1.1
