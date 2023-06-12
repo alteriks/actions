@@ -1,0 +1,16 @@
+name: build
+
+on:
+  push:
+    branches: [ master ]
+    paths-ignore:
+      - "README.md"
+jobs:
+  alt-build:
+      - run: exit 1
+  telegram-notification:
+    steps:
+      - name: Send Telegram message on failure
+        if: ${{ jobs.alt-build.result }} == 'failure'
+      - name: Send Telegram message on success
+        if: ${{ jobs.alt-build.result }} == 'success'
