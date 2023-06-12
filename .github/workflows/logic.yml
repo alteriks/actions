@@ -7,11 +7,12 @@ on:
       - "README.md"
 jobs:
   alt-build:
-  runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
+    steps:
       - name: exit 1
       - run: exit 1
   telegram-notification:
-  runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Send Telegram message on failure
         if: ${{ jobs.alt-build.result }} == 'failure'
