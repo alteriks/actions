@@ -9,6 +9,7 @@ jobs:
   alt-build:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - name: exit 1
         run: exit 1
   telegram-notification:
